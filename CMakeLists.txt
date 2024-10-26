@@ -12,9 +12,11 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 # Add your executable
 add_executable(helloimg helloimg.cpp)
+add_executable(hellovid hellovid.cpp)
 
 # Link OpenCV libraries to your executable
 target_link_libraries(helloimg ${OpenCV_LIBS})
+target_link_libraries(hellovid ${OpenCV_LIBS})
 
 # Enable generation of compile_commands.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
