@@ -4,6 +4,10 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/videoio.hpp>
 
+// g_run controls the number of frames to play
+// when g_run = 0, the video is paused,
+// when g_run = positive integer k, video plays k frames then pause
+// when g_run is negative, video plays continuously until the end
 int g_slider_pos = 0;
 int g_run = 1, g_dontset = 0; // start out in single step mode
 cv::VideoCapture g_cap;
@@ -58,6 +62,7 @@ int main(int argc, char *argv[])
     if (c == 27) // Escape key stops the video
       break;
   }
+  cv::destroyWindow("Hello Video");
 
   return 0;
 }
